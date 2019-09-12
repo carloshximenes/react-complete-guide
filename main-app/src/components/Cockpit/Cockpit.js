@@ -17,14 +17,14 @@ const Cockpit = (props) => {
         return () => {
             console.log('[Cockpit.js] cleanup work in 2nd useEffect');
         }
-    })
+    });
 
     const assignedClasses = [];
     let btnClass = '';
 
     if (props.showPersons) btnClass = styles.Red;
-    if (props.persons.length <= 2) assignedClasses.push(styles.red);
-    if (props.persons.length <= 1) assignedClasses.push(styles.bold);
+    if (props.personsLength <= 2) assignedClasses.push(styles.red);
+    if (props.personsLength <= 1) assignedClasses.push(styles.bold);
 
     return (
         <div>
@@ -37,4 +37,4 @@ const Cockpit = (props) => {
     );
 }
 
-export default Cockpit;
+export default React.memo(Cockpit);
